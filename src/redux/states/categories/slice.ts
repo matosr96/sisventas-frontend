@@ -54,7 +54,7 @@ export const categoriesSlice = createSlice({
     error: "",
   },
   reducers: {
-    reset: (state) => {
+    resetCategory: (state) => {
       (state.loading = false), (state.success = false), (state.error = "");
     },
     loadingCategoryById: (state) => {
@@ -118,7 +118,7 @@ export const categoriesSlice = createSlice({
   },
 });
 
-export const { reset } = categoriesSlice.actions;
+export const { resetCategory } = categoriesSlice.actions;
 export const {
   loadingCategoryById,
   setCategoryById,

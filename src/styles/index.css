@@ -59,6 +59,7 @@ button {
 input:focus,
 input:hover {
   outline: none !important;
+  border: transparent;
 }
 
 table {

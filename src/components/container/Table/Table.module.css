@@ -15,11 +15,6 @@
  overflow-y: auto;    
 }
 
-.table input{
- width: 1.8rem;
- border: 1px solid rgba(0, 0, 0, .01);
-}
-
 .table th{
  position: relative;
  font-weight: 500;

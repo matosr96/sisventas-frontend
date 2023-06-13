@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Products.module.css";
 import Layout from "../../components/Layout";
 import { HeaderPage, Table } from "../../components/container";
@@ -9,8 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppStore } from "../../redux/store";
 import { getAllProducts } from "../../redux/states/products/thunk";
 import { Product } from "../../types/products";
-import { TableProduct } from "../../components/screens";
 import CreateProducts from "./create";
+import { ScreenName } from "../../constants-definitions";
 
 const Products = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -68,11 +68,10 @@ const Products = () => {
             "sales",
             "low",
           ]}
-          deleteItem={() => ({})}
+          screenName={ScreenName.PRODUCT}
           setItemSelected={() => ({})}
         />
       </Layout>
-
       <CreateProducts openModal={openModal} setOpenModal={setOpenModal} />
     </>
   );

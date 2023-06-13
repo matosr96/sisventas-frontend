@@ -1,0 +1,31 @@
+.container_empty{
+ display: grid;
+ place-items: center;
+ padding-top: 4rem;
+}
+
+.container_empty img{
+ width: 16rem;
+}
+
+.container_empty h2{
+ margin-block: 1rem;
+ font-size: 2rem;
+ font-weight: 600;
+ color: #1f2937;
+}
+
+.container_empty p{
+ font-size: 1.3rem;
+ color: #1f2937;
+ margin-bottom: 2rem;
+ max-width: 48rem;
+ text-align: center;
+ line-height: 2rem;
+}
+
+.options{
+ display: flex;
+ align-items: center;
+ gap: 1rem;
+}

@@ -5,13 +5,13 @@ import Breadcrumbs from "../../components/Shared/Breadcumbs";
 import { Button } from "../../components/Shared";
 import styles from "./Categories.module.css";
 import SearchCmp from "../../components/search";
-import FormCategories from "./form";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStore } from "../../redux/store";
 import { getAllCategories } from "../../redux/states/categories/thunks";
 import { Category } from "../../types/categories";
-import { deleteCategory } from "../../redux/states/categories/slice";
 import { Table } from "../../components/container";
+import Empty from "../../components/container/Empty";
+import FormCategoriesCreate from "./formularios/create";
 
 const Categories = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -39,17 +39,6 @@ const Categories = () => {
     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  console.log("CATEGORIAS", filteredCategories);
-
-  const updateItem = (data: any) => {
-    setOpenModalUpdate(!openModalUpdate);
-    setCategorieSelected(data);
-  };
-
-  const deleteItem = (id: string) => {
-    dispatch(deleteCategory(id) as any);
-  };
-
   useEffect(() => {
     dispatch(getAllCategories() as any);
   }, [dispatch, success]);
@@ -65,25 +54,28 @@ const Categories = () => {
             Crear Categoria
           </Button>
         </div>
-        <Table
-          data={filteredCategories}
-          headers={["Icono", "Nombre"]}
-          keys={["icon", "name"]}
-          deleteItem={deleteItem}
-          setItemSelected={() => ({})}
+        <div>
+          {filteredCategories?.length > 0 ? (
+            <Table
+              data={filteredCategories}
+              headers={["Nombre"]}
+              keys={["name"]}
+              setItemSelected={() => ({})}
+              screenName="category"
+            />
+          ) : (
+            <Empty
+              title="Categoria"
+              copy="Desde aquí puedes crear y personalizar tus categorias en tiempo real gracias a los múltiples informes disponibles."
+              image="/LogoCompleto.svg"
+            />
+          )}
+        </div>
+        <FormCategoriesCreate
+          setOpenModal={setOpenModal}
+          openModal={openModal}
         />
       </Layout>
-      <FormCategories
-        openModal={openModal}
-        setOpenModal={setOpenModal}
-        operation="create"
-      />
-      <FormCategories
-        openModal={openModalUpdate}
-        setOpenModal={setOpenModalUpdate}
-        operation="update"
-        defaultData={categorieSelected}
-      />
     </>
   );
 };

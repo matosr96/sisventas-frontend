@@ -1,0 +1,37 @@
+.custom_select {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.custom_select div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  height: 4rem;
+  font-size: 2.8rem;
+  color: rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.custom_select .selected_icon {
+  border: 2px solid var(--green);
+}
+
+.custom_select .selected_icon i {
+  color: var(--green);
+}
+
+.btn_categories_form {
+  background-color: var(--green);
+  padding: 1rem;
+  margin-top: 2rem;
+  width: 100%;
+  border-radius: 0.4rem;
+  color: #fff;
+}

@@ -1,20 +1,10 @@
 import { sisventasApi } from "../../../api";
 import { CreateCategoryDto, PartialCategory } from "../../../types/categories";
+import { getConfig } from "../../../utilities/getConfig";
 import { loadingCategoryById, setCategoryById } from "./slice";
 
 export const getAllCategories = () => async (dispatch: any) => {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    throw new Error("Token not found in local storage");
-  }
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
+  const config = getConfig();
   dispatch(loadingCategoryById());
   const { data } = await sisventasApi.get(`/api/v1/categories/listar`, config);
   dispatch(setCategoryById({ categories: data }));
@@ -22,18 +12,7 @@ export const getAllCategories = () => async (dispatch: any) => {
 };
 
 export const createCategoryThunk = async (info: CreateCategoryDto) => {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    throw new Error("Token not found in local storage");
-  }
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
+  const config = getConfig();
   const { data } = await sisventasApi.post(
     "/api/v1/categories/crear",
     info,
@@ -43,18 +22,7 @@ export const createCategoryThunk = async (info: CreateCategoryDto) => {
 };
 
 export const updateCategoryThunks = async (info: PartialCategory) => {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    throw new Error("Token not found in local storage");
-  }
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
+  const config = getConfig();
   const { data } = await sisventasApi.put(
     `/api/v1/categories/actualizar/${info.idCategory}`,
     info,
@@ -64,18 +32,7 @@ export const updateCategoryThunks = async (info: PartialCategory) => {
 };
 
 export const deleteCategoriaThunk = async (idCategoria: string) => {
-  const token = localStorage.getItem("token");
-
-  if (!token) {
-    throw new Error("Token not found in local storage");
-  }
-
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
+  const config = getConfig();
   const { data } = await sisventasApi.delete(
     `/api/v1/categories/eliminar/${idCategoria}`,
     config
