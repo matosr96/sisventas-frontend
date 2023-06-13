@@ -1,0 +1,32 @@
+.input {
+  position: relative;
+  display: inline-block;
+  height: 3.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  outline: none;
+}
+
+.input input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.input input:focus {
+  outline: none;
+}
+
+.input_element {
+  height: 100%;
+  width: 100%;
+  padding: 0 0.7rem;
+ 
+}
+
+.input_none {
+  border: none;
+}

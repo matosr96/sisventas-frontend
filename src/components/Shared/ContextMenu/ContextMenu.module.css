@@ -1,0 +1,52 @@
+.actions {
+    position: relative;
+}
+
+.btn_context {
+    background-color: transparent;
+    font-size: 2rem;
+    padding-left: 1.5rem;
+}
+
+.btn_context:hover {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.context_menu {
+    display: none;
+}
+
+.context_menu.active {
+    display: inline-block;
+}
+
+.actions .context_menu.active {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    top: 2rem;
+    left: 0;
+    z-index: 99;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.context_menu.active button {
+    font-size: 1.4rem;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: left;
+    background-color: #fff;
+}
+
+.context_menu.active button:hover {
+    color: rgba(0, 0, 0, 1);
+}

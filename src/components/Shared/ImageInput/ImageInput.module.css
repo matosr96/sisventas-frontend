@@ -1,0 +1,76 @@
+.formbold_file_input{
+  width: 100%;
+  padding: 1.2rem 2.4rem;
+  border-radius: .5rem;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #333;
+  outline: none;
+  resize: none;
+  position: relative;
+}
+
+.formbold_file_input input {
+  opacity: 0;
+  position: absolute;
+  width: 480px;
+  height: 200px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.formbold_file_input label {
+  position: relative;
+  border: 1px dashed #e0e0e0;
+  border-radius: .5rem;
+  min-height: 18rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.8rem;
+  text-align: center;
+}
+
+.loader_image{
+  height: 5rem;
+  width: 100%;
+  z-index: 9999;
+}
+
+.formbold_drop_file{
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.formbold_or {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.formbold_browse {
+  font-weight: 300;
+  font-size: 1.4rem;
+  display: inline-block;
+  padding: .8rem 2.8rem;
+  border-radius: .5rem;
+  background-color: #1971ea;
+  color: #fff;
+} 
+
+.preview{
+  position: absolute;
+  top: 0;
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 180px;
+  display: grid;
+  object-fit: contain;
+  z-index: 0;
+}

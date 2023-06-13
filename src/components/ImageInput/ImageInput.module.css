@@ -1,0 +1,54 @@
+.formbold_file_input {
+  position: relative;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #333;
+  outline: none;
+  resize: none;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border: 1px dashed #e0e0e0;
+}
+
+.formbold_file_input input {
+  position: absolute;
+  opacity: 0;
+}
+
+.formbold_file_input label {
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+}
+
+.formbold_drop_file {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.formbold_or {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.formbold_browse {
+  font-weight: 300;
+  font-size: 1.4rem;
+  display: inline-block;
+  padding: 0.8rem 2.8rem;
+  border-radius: 0.5rem;
+  background-color: #1971ea;
+  color: #fff;
+}

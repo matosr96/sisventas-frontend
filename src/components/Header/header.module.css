@@ -1,0 +1,132 @@
+.container_header {
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 8rem;
+  padding-left: 8rem;
+}
+
+.group_logo {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.group_logo img {
+  height: 4rem;
+}
+
+.links_header {
+  display: flex;
+  gap: 2rem;
+}
+
+.link {
+  height: 4rem;
+  width: 12rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-main);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.active {
+  background-color: var(--header-item-selected);
+}
+
+.section_profile {
+  display: flex;
+  gap: 1rem;
+}
+
+.section_profile .btn_notification {
+  background-color: var(--header-item-selected);
+  border: none;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+}
+
+.section_profile .btn_notification i {
+  font-size: 2rem;
+  color: var(--white-main);
+}
+
+.profile_picture {
+  display: flex;
+}
+
+.section_profile .profile_picture img {
+  height: 5rem;
+  border-radius: 5rem;
+  border: 4px solid var(--header-item-selected);
+}
+
+.btn_options {
+  background-color: transparent;
+  height: 5rem;
+  width: 3rem;
+  border: none;
+}
+
+.btn_options i {
+  font-size: 1.6rem;
+  color: var(--header-item-selected);
+}
+
+.options_menu {
+  position: absolute;
+  top: 15%;
+  left: 93%;
+  transform: translateX(-50%);
+  background-color: var(--header-item-selected);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: var(--tran-06);
+}
+
+.options_menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.options_menu ul .Link {
+  margin-bottom: 1rem;
+  color: var(--white-main);
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.options_menu ul .Link:hover {
+  background-color: var(--blue-main);
+  border-radius: 0.4rem;
+}
+
+.options_menu .btn_menu {
+  margin-top: 2rem;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.options_menu .btn_menu span {
+  font-size: 1.8rem;
+  color: var(--white-main);
+}
+
+.options_menu .btn_menu i {
+  font-size: 1.8rem;
+  color: var(--white-main);
+}

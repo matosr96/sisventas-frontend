@@ -1,0 +1,7 @@
+.hd_screen {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}

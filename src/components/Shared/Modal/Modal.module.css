@@ -1,0 +1,36 @@
+.closeModal {
+  display: none;
+}
+
+.openModal {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  min-width: 30rem;
+}
+
+.header_modal {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.header_modal button {
+  background-color: transparent;
+}

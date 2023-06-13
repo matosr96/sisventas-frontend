@@ -1,0 +1,94 @@
+:root {
+  --font: ;
+  --primary-color: #1971ea;
+  --green: #3c5e3c;
+  --bg-main: #f2f2f2;
+  --bg-second: #fff;
+  --white-color: #1e1e1e;
+  --secondary-color: #344563;
+  --medium-color: rgba(255, 255, 255, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  text-rendering: optimizeSpeed;
+  min-height: 100vh;
+  overflow-y: scroll !important;
+  background-color: var(--bg-main);
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+button {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input:focus,
+input:hover {
+  outline: none !important;
+}
+
+table {
+  width: 100%;
+  margin-top: 2rem;
+  border-collapse: collapse;
+}
+
+thead {
+  text-align: center;
+}
+
+thead th {
+  padding: 1rem 0.5rem;
+  font-size: 1.4rem;
+  color: var(--green);
+  font-weight: 600;
+  text-align: left;
+  /* background-color: #DEEBFF; */
+}
+
+tbody {
+  text-align: left;
+}
+
+tbody td {
+  text-align: left;
+  padding: 1rem 0.7rem;
+  font-weight: 400;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--bg-dark);
+}

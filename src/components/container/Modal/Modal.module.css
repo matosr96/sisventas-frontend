@@ -1,0 +1,35 @@
+.scroll_overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.center_overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clickable_overlay{
+    min-height: 100%;
+    background: rgba(0, 0, 0, .3);
+}
+
+.styles_modal{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;
+}
+
+.center{
+    max-width: 850px;
+    vertical-align: middle;
+    border-radius: .5rem;
+    overflow: hidden;
+    min-height: 100%;
+    height: auto;
+}

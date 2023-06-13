@@ -1,0 +1,40 @@
+.container{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: .5s;
+    padding-bottom: .3rem;
+    z-index: 999;
+}
+
+.menu{
+    display: none;
+    z-index: 1;
+}
+
+.container:hover .menu{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 10rem;
+    width: auto;
+    background-color: var(--bg-second);
+    color: var(--legacy-blue);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: .5s;
+    white-space: nowrap;
+}
+
+.menu a{
+    padding: 1rem .5rem;
+    border-radius: .5rem;
+    font-size: 1.4rem;
+}
+
+.menu a:hover{
+    background-color: rgba(0, 0, 0, .05);
+}

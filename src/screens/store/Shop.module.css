@@ -1,0 +1,66 @@
+.container_banner {
+  height: 20rem;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  border-radius: 0.4rem;
+}
+
+.hd_screen {
+  display: flex;
+  gap: 1rem;
+}
+
+.container_banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_banner .text_banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.container_banner .text_banner img {
+  height: 8rem;
+}
+
+.body_shop {
+  margin-top: 2rem;
+}
+
+.container_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-gap: 10px;
+}
+
+.container_cart {
+  position: relative;
+}
+
+.btn_cart {
+  background-color: var(--green);
+  height: 4rem;
+  width: 4rem;
+  border-radius: 0.4rem;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.amount_id {
+  position: absolute;
+  bottom: 0;
+  background-color: red;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
