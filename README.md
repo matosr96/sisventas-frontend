@@ -56,6 +56,11 @@ pnpm run nombre-del-script
 - typescript: ^4.9.3
 - vite: ^4.2.0
 
+## Vistas
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/c01a1a3f-df94-4359-bb06-b10ee547de03)
+
+
 
 
 
