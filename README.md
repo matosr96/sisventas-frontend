@@ -74,6 +74,9 @@ pnpm run nombre-del-script
 
 ![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/c409ba8c-6ac9-4b69-95f7-ef8d7c60286b)
 
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/553b8e0f-4033-494e-a6b2-bd1bc8bf2e45)
+
+
 
 
 
