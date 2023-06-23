@@ -56,6 +56,34 @@ pnpm run nombre-del-script
 - typescript: ^4.9.3
 - vite: ^4.2.0
 
+## Vistas
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/c01a1a3f-df94-4359-bb06-b10ee547de03)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/34229097-c46f-4e0f-88aa-a9b0af2dafbe)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/e8019765-ef86-4491-a1b4-855ec3e1716e)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/a8046182-5a9f-4769-bfb7-b7b126660530)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/a48a920c-a9ac-4ac2-a74d-6f5885ccc57c)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/cedd980a-33ee-46f7-a965-e4966dedf668)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/7cae0f75-2e7a-4ac5-a90e-db30cae1b996)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/c409ba8c-6ac9-4b69-95f7-ef8d7c60286b)
+
+![image](https://github.com/matosr96/sisventas-frontend/assets/94972642/553b8e0f-4033-494e-a6b2-bd1bc8bf2e45)
+
+
+
+
+
+
+
+
+
 
 
 
