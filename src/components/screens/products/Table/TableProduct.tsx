@@ -4,7 +4,7 @@ import styles from "./TableProduct.module.css";
 import { deleteProduct } from "../../../../redux/states/products/slice";
 import swal from "sweetalert";
 import { useState } from "react";
-import UpdateProduct from "../../../../screens/products/update";
+import UpdateProduct from "../../../../screens/products/forms/update";
 
 interface Props {
   data: Product[];

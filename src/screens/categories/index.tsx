@@ -18,6 +18,10 @@ const Categories = () => {
   const [openModalUpdate, setOpenModalUpdate] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
+  const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user") || "")
+    : "";
+
   const dispatch = useDispatch();
   const {
     categories = [],
@@ -25,10 +29,13 @@ const Categories = () => {
     loading,
   } = useSelector((state: AppStore) => state.categories);
 
+ 
+
   const [categorieSelected, setCategorieSelected] = useState<Category>({
     idCategory: "",
     name: "",
     icon: "",
+    user: 0
   });
 
   const handleSearch = (value: string) => {
@@ -38,6 +45,10 @@ const Categories = () => {
   const filteredCategories = categories.filter((item: Category) => {
     return item.name.toLowerCase().includes(searchTerm.toLowerCase());
   });
+
+  const categoriesForUser = filteredCategories.filter(
+    (category: Category) => category.user === user.idUsuario
+  );
 
   useEffect(() => {
     dispatch(getAllCategories() as any);
@@ -55,9 +66,9 @@ const Categories = () => {
           </Button>
         </div>
         <div>
-          {filteredCategories?.length > 0 ? (
+          {categoriesForUser?.length > 0 ? (
             <Table
-              data={filteredCategories}
+              data={categoriesForUser}
               headers={["Nombre"]}
               keys={["name"]}
               setItemSelected={() => ({})}

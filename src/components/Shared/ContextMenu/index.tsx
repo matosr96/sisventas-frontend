@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { deleteItem } from "../../hooks/delete";
 import { ScreenName } from "../../../constants-definitions";
 import FormCategoriesUpdate from "../../../screens/categories/formularios/update";
+import FormUpdateProduct from "../../../screens/products/forms/update";
 
 interface Props {
   item: any;
@@ -80,7 +81,11 @@ const ContextMenu: FunctionComponent<Props> = ({
           id={selected}
         />
       ) : screenName === ScreenName.PRODUCT ? (
-        "asd"
+        <FormUpdateProduct
+          setOpenModal={setOpenModal}
+          openModal={openModal}
+          uuidProduct={selected}
+        />
       ) : (
         ""
       )}

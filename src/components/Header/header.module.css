@@ -5,7 +5,7 @@
   align-items: center;
   background-color: #fff;
   padding-left: 8rem;
-  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 .group_logo {
@@ -129,4 +129,26 @@
 .options_menu .btn_menu i {
   font-size: 1.8rem;
   color: var(--white-main);
+}
+
+.info_user{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.info_user .photo_user img {
+  height: 5rem;
+  border-radius: 5rem;
+}
+
+.info_user .data_user{
+  text-align: right;
+} 
+
+.info_user .data_user span{
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
 }

@@ -13,6 +13,9 @@ interface Props {
 const FormCategoriesCreate = ({ setOpenModal, openModal }: Props) => {
   const dispatch = useDispatch();
   const { success } = useSelector((state: AppStore) => state.categories);
+  const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user") || "")
+    : "";
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -20,7 +23,13 @@ const FormCategoriesCreate = ({ setOpenModal, openModal }: Props) => {
   const submitCreateHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      dispatch(createCategory({ name: name, icon: image }) as any);
+      dispatch(
+        createCategory({
+          name: name,
+          icon: image,
+          user: user.idUsuario,
+        }) as any
+      );
     } catch (error) {
       if (error instanceof Error) {
         console.log(error);

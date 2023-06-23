@@ -23,13 +23,13 @@ const SaleDetails = ({
 }: Props) => {
   const dispatch = useDispatch();
   const productIds = ProductsData.map((product) => Number(product.idProduct));
-
+  const user = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user") || "")
+    : "";
   const totalSalePrice = ProductsData.reduce(
     (total, product) => total + product.salePrice,
     0
   );
-
-  console.log("TOTAL DE LA VENTA", totalSalePrice);
 
   const [sale, setSale] = useState<CreateSaleDto>({
     fechaVenta: new Date(),
@@ -53,6 +53,7 @@ const SaleDetails = ({
               ...sale,
               totalVenta: totalSalePrice,
               productIds: productIds,
+              userId: user.idUsuario,
             }) as any
           );
 
@@ -108,7 +109,7 @@ const SaleDetails = ({
                   </div>
                   <div className={styles.info_product}>
                     <p>{product.name.toUpperCase()}</p>
-                    <span>{product.salePrice}</span>
+                    <span>{DivisaFormater(product.salePrice)}</span>
                   </div>
                 </div>
                 <button onClick={() => handleDelete(Number(product.idProduct))}>

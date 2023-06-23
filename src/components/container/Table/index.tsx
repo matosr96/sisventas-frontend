@@ -28,8 +28,6 @@ const Table = <T extends DataRecord>({
 
   const [selected, setSelected] = useState("");
 
- 
-
   console.log("QUE ES ", selected);
   return (
     <>
@@ -47,11 +45,7 @@ const Table = <T extends DataRecord>({
             {data.map((d) => (
               <tr key={d.uuid}>
                 {keys.map((key) => (
-                  <td key={key}>
-                    {key === "purchasePrice" || key === "salePrice"
-                      ? DivisaFormater({ value: d[key.toLowerCase()] })
-                      : d[key.toLowerCase()]}
-                  </td>
+                  <td key={key}>{d[key]}</td>
                 ))}
                 <td>
                   <ContextMenu
@@ -69,7 +63,6 @@ const Table = <T extends DataRecord>({
           </tbody>
         </table>
       </div>
-    
     </>
   );
 };

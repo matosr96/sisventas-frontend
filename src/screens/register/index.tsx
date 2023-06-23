@@ -6,8 +6,11 @@ import Field from "../../components/Field";
 import Input from "../../components/Input";
 import { Link, useNavigate } from "react-router-dom";
 import { CreateBossDto, PartialBoss } from "../../types";
-import { PublicRoutes } from "../../constants-definitions/Routes";
+import { PrivateRoutes, PublicRoutes } from "../../constants-definitions/Routes";
 import InputCloudinary from "../../components/InputCloudinary/InputCloudinary";
+import { CreateUserDto } from "../../types/user";
+import { CreateUser } from "../../redux/states";
+import swal from "sweetalert";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -16,16 +19,13 @@ const Register = () => {
   const [url, setUrl] = useState("");
   const [password, setPassword] = useState("");
 
-  const [boss, setBoss] = useState<CreateBossDto>({
-    name: "",
-    address: "",
-    email: "",
-    identification: 0,
-    last_name: "",
-    photo: "",
+  const [userData, setUserData] = useState<CreateUserDto>({
+    username: "",
+    password: "",
+    nombre: "",
+    apellido: "",
+    foto: "",
   });
-
-  console.log(url);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -33,11 +33,26 @@ const Register = () => {
     >
   ) => {
     const { name, value } = e.target;
-    setBoss((prev) => ({ ...prev, [name]: value }));
+    setUserData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    dispatch(CreateUser({ ...userData, foto: url }) as any)
+      .then(() => {
+        swal("Registro de usuario exitoso", {
+          icon: "success",
+        }).then(() => {
+          window.location.replace(PrivateRoutes.MENU_STORE);
+        });
+      })
+      .catch((error: Error) => {
+        console.error(`Error al crear el usuario: ${error.message}`, error);
+  
+        swal("Error al crear el usuario", {
+          icon: "error",
+        });
+      });
   };
 
   useEffect(() => {}, [dispatch]);
@@ -66,23 +81,31 @@ const Register = () => {
                 <div className={styles.inputs}>
                   <Field label="Nombre">
                     <Input
-                      name="name"
-                      value={boss.name}
+                      name="nombre"
+                      value={userData.nombre}
                       onChange={handleChange}
                     />
                   </Field>
                   <Field label="Apellido">
                     <Input
-                      name="last_name"
-                      value={boss.last_name}
+                      name="apellido"
+                      value={userData.apellido}
                       onChange={handleChange}
                     />
                   </Field>
-                  <Field label="Identificacion (CC,TI,PS)">
+                  <Field label="Nombre de usuario">
                     <Input
-                      name="identification"
-                      value={boss.identification}
+                      name="username"
+                      value={userData.username}
                       onChange={handleChange}
+                    />
+                  </Field>
+                  <Field label="Contraseña">
+                    <Input
+                      name="password"
+                      value={userData.password}
+                      onChange={handleChange}
+                      type="password"
                     />
                   </Field>
                 </div>
@@ -97,28 +120,7 @@ const Register = () => {
                   )}
                 </div>
               </div>
-              <Field label="Direccion">
-                <Input
-                  name="address"
-                  value={boss.address}
-                  onChange={handleChange}
-                />
-              </Field>
-              <Field label="Correo electronico">
-                <Input
-                  name="email"
-                  value={boss.email}
-                  onChange={handleChange}
-                />
-              </Field>
-              <Field label="Contraseña">
-                <Input
-                  name="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  type="password"
-                />
-              </Field>
+
               <button className={styles.btn_login} type="submit">
                 Registrarse
               </button>

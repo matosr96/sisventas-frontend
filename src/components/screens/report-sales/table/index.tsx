@@ -1,17 +1,14 @@
-import React from "react";
 import { Sale } from "../../../../types/sales";
 import styles from "./TableSales.module.css";
 import swal from "sweetalert";
+import { format } from "date-fns";
 
 interface Props {
   data: Sale[];
+  setSaleId: Function;
 }
 
-const TableSales = ({ data }: Props) => {
-  const handleEditSale = (id: string) => {
-    // Implementa la lógica para editar una venta aquí
-  };
-
+const TableSales = ({ data, setSaleId }: Props) => {
   const handleDeleteSale = (id: string) => {
     swal({
       text: "¿Estás seguro de que deseas eliminar esta venta?",
@@ -20,7 +17,6 @@ const TableSales = ({ data }: Props) => {
       dangerMode: true,
     }).then((confirmDelete) => {
       if (confirmDelete) {
-        // Implementa la lógica para eliminar una venta aquí
         swal("Venta eliminada correctamente.", {
           icon: "success",
         });
@@ -42,14 +38,19 @@ const TableSales = ({ data }: Props) => {
           {data?.map((sale: Sale) => (
             <tr key={sale.idSale}>
               <td>{sale.totalVenta}</td>
-              <td>{sale.fechaVenta.toString()}</td>
+              <td>
+                {format(
+                  new Date(sale.fechaVenta.toString()),
+                  "dd/MM/yyyy HH:mm:ss"
+                )}
+              </td>
               <td>
                 <div className={styles.actions_btn}>
                   <button
                     className={styles.edit}
-                    onClick={() => handleEditSale(sale.idSale)}
+                    onClick={() => setSaleId(sale.idSale)}
                   >
-                    <i className="bx bxs-edit"></i>
+                    <i className="bx bxs-show"></i>
                   </button>
                   <button
                     className={styles.trash}

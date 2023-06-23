@@ -1,21 +1,16 @@
-import React, { useState } from "react";
-import styles from "./header.module.css";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { PrivateRoutes } from "../../constants-definitions/Routes";
+import styles from "./header.module.css";
 
 const Header = () => {
-  const dispatch = useDispatch();
+  const [activeLink, setActiveLink] = useState<string>("");
   const user = localStorage.getItem("user")
     ? JSON.parse(localStorage.getItem("user") || "")
     : "";
-  const { email, name, imageUrl, givenName } = user;
 
-  const [activeLink, setActiveLink] = useState<string>("");
-  const [openMenu, setOpenMenu] = useState(false);
-  const HandlerMenu = () => {
-    setOpenMenu(!openMenu);
-  };
+  const { name: nameRol } = user.roles[0];
+  console.log("en el user", nameRol);
 
   const handleClick = (id: string) => {
     setActiveLink(id);
@@ -26,8 +21,42 @@ const Header = () => {
       <div className={styles.group_logo}>
         <img src="/LogoIcon.svg" />
         <div className={styles.links_header}>
+          {nameRol === "ADMIN" ? (
+            <>
+              {" "}
+              <Link
+                to={PrivateRoutes.CATEGORIES}
+                className={`${styles.link} ${
+                  activeLink === "categories" ? styles.active : ""
+                }`}
+                onClick={() => handleClick("categories")}
+              >
+                Categorias
+              </Link>
+              <Link
+                to={PrivateRoutes.PRODUCTS}
+                className={`${styles.link} ${
+                  activeLink === "Productos" ? styles.active : ""
+                }`}
+                onClick={() => handleClick("Productos")}
+              >
+                Productos
+              </Link>
+              <Link
+                to={PrivateRoutes.REPORT_SALE}
+                className={`${styles.link} ${
+                  activeLink === "report" ? styles.active : ""
+                }`}
+                onClick={() => handleClick("report")}
+              >
+                Reportes
+              </Link>
+            </>
+          ) : (
+            ""
+          )}
           <Link
-            to={"/welcome"}
+            to={PrivateRoutes.MENU_STORE}
             className={`${styles.link} ${
               activeLink === "dashboard" ? styles.active : ""
             }`}
@@ -35,24 +64,7 @@ const Header = () => {
           >
             Dashboard
           </Link>
-          <Link
-            to={PrivateRoutes.CATEGORIES}
-            className={`${styles.link} ${
-              activeLink === "categories" ? styles.active : ""
-            }`}
-            onClick={() => handleClick("categories")}
-          >
-            Categorias
-          </Link>
-          <Link
-            to={PrivateRoutes.PRODUCTS}
-            className={`${styles.link} ${
-              activeLink === "Productos" ? styles.active : ""
-            }`}
-            onClick={() => handleClick("Productos")}
-          >
-            Productos
-          </Link>
+
           <Link
             to={PrivateRoutes.SHOP}
             className={`${styles.link} ${
@@ -62,15 +74,17 @@ const Header = () => {
           >
             Tienda
           </Link>
-          <Link
-            to={PrivateRoutes.REPORT_SALE}
-            className={`${styles.link} ${
-              activeLink === "report" ? styles.active : ""
-            }`}
-            onClick={() => handleClick("report")}
-          >
-            Reportes
-          </Link>
+        </div>
+      </div>
+      <div className={styles.info_user}>
+        <div className={styles.data_user}>
+          <span>
+            {user.nombre} {user.apellido}
+          </span>
+          <p>{user.username}</p>
+        </div>
+        <div className={styles.photo_user}>
+          <img src={!user.foto ? "/userDefault.svg" : user.foto} />
         </div>
       </div>
     </div>

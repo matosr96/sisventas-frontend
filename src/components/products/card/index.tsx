@@ -1,5 +1,6 @@
 import { Product } from "../../../types/products";
 import styles from "./CardProduct.module.css";
+import { DivisaFormater } from "../../../utilities/divisa-formater";
 
 interface Props {
   setProductId: Function;
@@ -23,7 +24,7 @@ const CardProduct = ({ data, setProductId }: Props) => {
       </div>
       <div className={styles.card_footer}>
         <span className={styles.text_title}>
-          {data.salePrice}
+          {DivisaFormater(data.salePrice)}
         </span>
         <div className={styles.card_button}>
           <button onClick={() => handleProducts(data)}>
